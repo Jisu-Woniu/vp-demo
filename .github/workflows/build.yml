@@ -1,0 +1,23 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Setup vp (Node + pnpm cache + install)
+        uses: voidzero-dev/setup-vp@v1
+        with:
+          node-version: "lts"
+          cache: true
+          run-install: true
+
+      - name: Build
+        run: vp run build
