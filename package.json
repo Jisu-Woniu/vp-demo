@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vp dev",
     "build": "tsc && vp build",
+    "deploy": "node ./build.js",
     "preview": "vp preview",
     "prepare": "vp config"
   },
